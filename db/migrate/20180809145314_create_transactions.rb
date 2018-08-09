@@ -5,7 +5,8 @@ class CreateTransactions < ActiveRecord::Migration[5.2]
       t.bigint :qty
       t.belongs_to :user, foreign_key: true
       t.date :borrow_date
-      t.datestatus :return_date
+      t.date :return_date
+      t.string :status
 
       t.timestamps
     end
