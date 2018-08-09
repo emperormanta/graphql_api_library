@@ -10,4 +10,14 @@ Types::QueryType = GraphQL::ObjectType.define do
       "Hello World!"
     }
   end
+
+  field :User, Types::UserType do
+    description "Get User based on ID parameter"
+
+    argument :id, !types.ID
+    
+    resolve -> (obj, args, ctx) {
+      User.find( args[:id] )
+    }
+  end
 end
