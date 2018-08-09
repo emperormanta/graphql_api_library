@@ -6,8 +6,9 @@ class CreateBooks < ActiveRecord::Migration[5.2]
       t.string :publisher
       t.text :description
       t.belongs_to :book_category, foreign_key: true
+      t.string :status
       t.belongs_to :shelf, foreign_key: true
-
+      
       t.timestamps
     end
   end
