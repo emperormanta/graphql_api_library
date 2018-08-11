@@ -8,4 +8,9 @@ Types::MutationType = GraphQL::ObjectType.define do
       "Hello World!"
     }
   end
+
+  field :createUser, function: Resolvers::UserCreate.new
+  field :createShelf, function: Resolvers::ShelfCreate.new
+  field :createBookCategory, function: Resolvers::BookCategoryCreate.new
+  field :deleteBookCategory, function: Resolvers::BookCategoryDelete.new
 end
